@@ -72,8 +72,9 @@ body {
 .vp-doc .activity-card a { text-decoration: none; }
 .activity-card strong { display: block; font-size: 18px; }
 .activity-card small { display: block; color: var(--vp-c-text-2); }
-.VPDoc:not(.has-aside):has(.workshop-directory) .content-container { max-width: 1104px; }
-.workshop-directory { display: grid; grid-template-columns: minmax(0, 1fr) minmax(180px, 22%); gap: clamp(32px, 5vw, 76px); align-items: start; margin-top: 24px; }
+.VPDoc:not(.has-sidebar):has(.workshop-directory) > .container { max-width: 1104px; }
+.VPDoc:not(.has-sidebar):has(.workshop-directory) .content { max-width: none; }
+.workshop-directory { display: grid; grid-template-columns: minmax(0, 720px) minmax(180px, 220px); gap: clamp(32px, 5vw, 76px); align-items: start; margin-top: 24px; }
 .workshop-directory .activity-card { max-width: none; }
 .workshop-directory .workshop-search { margin-top: 0; margin-bottom: 28px; }
 .workshop-directory .activity-card + .activity-card { margin-top: 32px; }
