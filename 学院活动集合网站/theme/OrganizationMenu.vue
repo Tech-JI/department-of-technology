@@ -20,9 +20,9 @@ function closeFromBackdrop(event) {
 </script>
 
 <template>
-  <button class="organization-toggle" type="button" aria-haspopup="dialog"
+  <button class="organization-toggle" type="button" aria-label="导航" aria-haspopup="dialog"
     aria-controls="organization-panel" @click="panel.showModal()">
-    <span aria-hidden="true">☰</span> 导航
+    <span aria-hidden="true">☰</span><span class="navigation-label"> 导航</span>
   </button>
   <button v-if="route.path !== withBase('/') && route.path !== withBase('/index.html')"
     class="history-back" type="button" aria-label="返回上一页" title="返回上一页" @click="goBack">←</button>
@@ -78,6 +78,15 @@ function closeFromBackdrop(event) {
   border-radius: 8px;
   font-size: 14px;
   background: #f1f7ff;
+}
+@media (max-width: 1488px) {
+  .organization-toggle:has(+ .history-back) {
+    width: 36px;
+    height: 36px;
+    padding: 0;
+  }
+  .organization-toggle:has(+ .history-back) .navigation-label { display: none; }
+  .history-back { left: 58px; }
 }
 .organization-panel {
   position: fixed;

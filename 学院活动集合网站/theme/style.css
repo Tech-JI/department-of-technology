@@ -7,12 +7,7 @@
   --vp-c-brand-soft: #edf0e9;
 }
 
-.VPNavBar .title {
-  padding-left: max(76px, calc(136px - max(32px, (100vw - var(--vp-layout-max-width) + 64px) / 2)));
-}
-@media (max-width: 767px) {
-  .VPNavBar .title { padding-left: 112px; }
-}
+.VPNavBar .title { padding-left: 76px; }
 .vp-doc a { color: inherit; }
 .vp-doc .header-anchor { display: none; }
 .vp-external-link-icon::after,
