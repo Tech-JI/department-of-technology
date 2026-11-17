@@ -1,6 +1,18 @@
 ---
 layout: page
 title: 技术部
+head:
+  - - script
+    - {}
+    - |
+      if (!location.hash && 'scrollRestoration' in history) {
+        history.scrollRestoration = 'manual';
+      }
+      window.addEventListener('pageshow', () => {
+        if ((location.pathname === '/' || location.pathname === '/index.html') && !location.hash) {
+          window.scrollTo({ top: 0, behavior: 'instant' });
+        }
+      });
 ---
 
 <script setup>
