@@ -22,7 +22,8 @@ import { announcements } from './theme/announcements.js'
 .hero h1 + p { max-width: 55em; line-height: 1.7; }
 .announcements { padding: 8px 20px 12px; border: 1px solid #c5daf2; border-radius: 16px; background: #ffffffa8; }
 .announcements li + li { border-top: 1px solid #d5e1ed; }
-.announcements li a { display: block; padding: 10px 0; }
+.announcements li a { display: flex; justify-content: space-between; align-items: baseline; gap: 6px 16px; flex-wrap: wrap; padding: 10px 0; }
+.announcements time { color: var(--vp-c-text-2); font-size: 14px; white-space: nowrap; }
 .section-link { display: inline-block; margin-top: 14px; text-decoration: underline; text-underline-offset: 4px; }
 .announcements a:hover, .section-link:hover { text-decoration: underline; }
 .school { color: #4a627c; font-size: 14px; }
@@ -62,7 +63,10 @@ import { announcements } from './theme/announcements.js'
     <h2 id="announcements">技术部公告</h2>
     <ul v-if="announcements.length" class="announcements">
       <li v-for="announcement in announcements.slice(0, 5)" :key="announcement.title">
-        <a :href="withBase(announcement.href)">{{ announcement.title }}</a>
+        <a :href="withBase(announcement.href)">
+          <span>{{ announcement.title }}</span>
+          <time :datetime="announcement.date">{{ announcement.date }}</time>
+        </a>
       </li>
     </ul>
     <a class="section-link" :href="withBase('/technology/announcements')">更多公告 →</a>

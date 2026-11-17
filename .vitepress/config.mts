@@ -8,6 +8,7 @@ export default defineConfig({
   cleanUrls: true,
   themeConfig: {
     nav: [
+      { text: '首页', link: '/' },
       { text: '关于技术部', link: '/technology/' },
       { text: 'Workshop', link: '/technology/workshops' },
       { text: '加入我们', link: '/technology/join' }
