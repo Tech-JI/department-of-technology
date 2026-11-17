@@ -16,7 +16,7 @@ import WorkshopResource from '../theme/WorkshopResource.vue'
 
 <WorkshopResource href="https://sjtu.feishu.cn/minutes/obcnjgy2t179ze66967zfbq7" label="在飞书妙记观看" />
 
-请使用上海交通大学飞书账号登录。观看范围以该妙记的分享设置为准。
+该回放对交大飞书组织内获得链接的人开放。用交大飞书账号登录即可观看，无需单独申请权限。
 
 ## 教学资料
 

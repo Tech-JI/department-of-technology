@@ -10,10 +10,9 @@ import WorkshopSearch from '../theme/WorkshopSearch.vue'
 
 # 技术部 Workshop
 
-<WorkshopSearch />
-
 <div class="workshop-directory">
   <div>
+    <WorkshopSearch />
     <div v-for="workshop in workshops" :key="workshop.href" class="activity-card">
       <a class="glass-link" :href="withBase(workshop.href)">
         <strong>{{ workshop.name }} →</strong>

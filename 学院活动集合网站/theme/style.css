@@ -72,15 +72,13 @@ body {
 .vp-doc .activity-card a { text-decoration: none; }
 .activity-card strong { display: block; font-size: 18px; }
 .activity-card small { display: block; color: var(--vp-c-text-2); }
-.workshop-directory { display: grid; grid-template-columns: minmax(0, 1fr) minmax(155px, 30%); gap: clamp(28px, 5vw, 58px); align-items: start; margin-top: 24px; }
+.VPDoc:not(.has-aside):has(.workshop-directory) .content-container { max-width: 1104px; }
+.workshop-directory { display: grid; grid-template-columns: minmax(0, 1fr) minmax(180px, 22%); gap: clamp(32px, 5vw, 76px); align-items: start; margin-top: 24px; }
+.workshop-directory .activity-card { max-width: none; }
+.workshop-directory .workshop-search { margin-top: 0; margin-bottom: 28px; }
 .workshop-directory .activity-card + .activity-card { margin-top: 32px; }
 .workshop-directory nav { padding: 12px 18px; margin-top: 16px; border-left: 1px solid var(--vp-c-divider); }
 .workshop-directory nav a { display: block; padding: 9px 0; text-underline-offset: 4px; }
-@media (min-width: 960px) {
-  .vp-doc:has(.workshop-directory) h1,
-  .vp-doc:has(.workshop-directory) .workshop-search,
-  .workshop-directory > div { translate: -48px 0; }
-}
 @media (max-width: 767px) {
   .workshop-directory { grid-template-columns: 1fr; }
   .workshop-directory nav { display: none; }
