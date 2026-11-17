@@ -1,7 +1,6 @@
 <script setup>
 import { ref } from 'vue'
 import { useRoute, withBase } from 'vitepress'
-import organizations from './organizations.json'
 
 const panel = ref(null)
 const route = useRoute()
@@ -33,23 +32,9 @@ function closeFromBackdrop(event) {
       <form method="dialog"><button type="submit" aria-label="关闭导航" autofocus>×</button></form>
     </header>
     <nav aria-label="网站导航" @click="$event.target.closest('a') && panel.close()">
-      <a :href="withBase('/')">学院活动集合</a>
-      <template v-for="group in organizations" :key="group.name">
-        <div v-if="group.departments" class="split-row">
-          <a class="row-label group-name" :href="withBase(group.href)">{{ group.name }}</a>
-          <details open class="disclosure">
-            <summary :aria-label="group.name + '部门列表'"></summary>
-            <div v-for="department in group.departments" :key="department.href" class="department">
-              <a :class="{ 'row-label': department.topics?.length }" :href="withBase(department.href)">{{ department.name }}</a>
-              <details v-if="department.topics?.length" class="disclosure activity-disclosure">
-                <summary :aria-label="department.name + '活动主题'"></summary>
-                <a v-for="topic in department.topics" :key="topic.href" :href="withBase(topic.href)">{{ topic.name }}</a>
-              </details>
-            </div>
-          </details>
-        </div>
-        <a v-else :href="withBase(group.href)">{{ group.name }}</a>
-      </template>
+      <a :href="withBase('/')">技术部首页</a>
+      <a :href="withBase('/technology/workshops.html')">Workshop</a>
+      <a :href="withBase('/technology/competitions.html')">比赛</a>
     </nav>
   </dialog>
 </template>
@@ -104,29 +89,16 @@ function closeFromBackdrop(event) {
 .organization-panel::backdrop { background: rgb(24 45 73 / 32%); }
 header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
 h2 { font-weight: 700; }
-form button, nav a, summary { padding: 8px 10px; border-radius: 8px; }
+form button, nav a { padding: 8px 10px; border-radius: 8px; }
 form button { font-size: 26px; line-height: 1; }
-summary { cursor: pointer; }
 nav a { display: block; }
-nav a:hover, form button:hover, summary:hover { background: #d8eaff; }
-.split-row, .department { position: relative; }
-.department { margin-left: 12px; }
-nav .row-label { position: absolute; z-index: 1; top: 8px; left: 10px; padding: 0; }
-nav .group-name { font-weight: 650; }
-.disclosure > summary { display: flex; align-items: center; justify-content: flex-end; height: 40px; list-style: none; }
-.disclosure > summary::-webkit-details-marker { display: none; }
-.disclosure > summary::after { content: '⌄'; font-size: 20px; line-height: 1; }
-.disclosure[open] > summary::after { transform: rotate(180deg); }
-.activity-disclosure > a { margin-left: 16px; }
+nav a:hover, form button:hover { background: #d8eaff; }
 
 @media (prefers-reduced-motion: no-preference) {
   .organization-panel[open] { animation: panel-in 180ms ease-out; }
   .organization-panel::backdrop { animation: backdrop-in 180ms ease-out; }
-  .disclosure[open] > :not(summary) { animation: disclosure-in 150ms ease-out; }
-  nav a, summary, form button { transition: background-color 150ms ease; }
-  .disclosure > summary::after { transition: transform 150ms ease; }
+  nav a, form button { transition: background-color 150ms ease; }
   @keyframes panel-in { from { transform: translateX(-100%); } }
   @keyframes backdrop-in { from { opacity: 0; } }
-  @keyframes disclosure-in { from { opacity: 0; transform: translateY(-4px); } }
 }
 </style>

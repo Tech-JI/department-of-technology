@@ -2,7 +2,7 @@
 
 ## 部门简介
 
-<div class="intro-placeholder" aria-hidden="true"><!-- 待补充部门简介 --></div>
+技术部面向学院同学开展技术科普 Workshop。你可以在这里浏览活动回放、下载教学资料，查看比赛记录。
 
 ## 活动主题
 
