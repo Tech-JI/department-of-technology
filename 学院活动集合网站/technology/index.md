@@ -1,8 +1,8 @@
 # 技术部
 
-[← 返回学院活动集合](../)
-
 ## 活动主题
 
-- [Workshop](./workshops.md)
-- [比赛](./competitions.md)
+<div class="topic-grid">
+  <a class="glass-link" href="./workshops.html">Workshop <span aria-hidden="true">→</span></a>
+  <a class="glass-link" href="./competitions.html">比赛 <span aria-hidden="true">→</span></a>
+</div>

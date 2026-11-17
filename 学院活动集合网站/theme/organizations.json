@@ -1,34 +1,51 @@
 [
   {
-    "name": "联络部",
-    "href": "/liaison/"
+    "name": "学生会",
+    "departments": [
+      {
+        "name": "联络部",
+        "href": "/liaison/"
+      },
+      {
+        "name": "技术部",
+        "href": "/technology/",
+        "topics": [
+          {
+            "name": "Workshop",
+            "href": "/technology/workshops.html"
+          },
+          {
+            "name": "比赛",
+            "href": "/technology/competitions.html"
+          }
+        ]
+      },
+      {
+        "name": "社体部",
+        "href": "/sports/"
+      },
+      {
+        "name": "事业部",
+        "href": "/affairs/"
+      },
+      {
+        "name": "文艺部",
+        "href": "/arts/"
+      },
+      {
+        "name": "传媒部",
+        "href": "/media/"
+      }
+    ]
   },
   {
-    "name": "技术部",
-    "href": "/technology/"
+    "name": "科协",
+    "href": "/innovation/",
+    "label": "学生科技创新协会"
   },
   {
-    "name": "社体部",
-    "href": "/sports/"
-  },
-  {
-    "name": "事业部",
-    "href": "/affairs/"
-  },
-  {
-    "name": "文艺部",
-    "href": "/arts/"
-  },
-  {
-    "name": "传媒部",
-    "href": "/media/"
-  },
-  {
-    "name": "学生科技创新协会",
-    "href": "/innovation/"
-  },
-  {
-    "name": "觅源青志队",
-    "href": "/volunteers/"
+    "name": "青志队",
+    "href": "/volunteers/",
+    "label": "“觅源”青年志愿者服务队"
   }
 ]
