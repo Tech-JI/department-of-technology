@@ -6,6 +6,12 @@ import WorkshopResource from '../theme/WorkshopResource.vue'
 
 技术部 Workshop
 
+## Workshop 介绍
+
+课程用一个小型赛车游戏项目串起 Git 的基本操作。你会从安装和配置 Git 开始，把文件改动加入暂存区、提交到仓库、查看历史，并练习如何撤销改动。
+
+协作部分介绍分支、远程仓库和冲突处理。可以先在自己的分支上完成一项改动，再练习与同学合并工作。详情页的练习题和参考表适合课后复习，SSH 配置文档可用于连接远程仓库。
+
 ## 回放
 
 <WorkshopResource href="https://sjtu.feishu.cn/minutes/obcnjgy2t179ze66967zfbq7" label="在飞书妙记观看" />
