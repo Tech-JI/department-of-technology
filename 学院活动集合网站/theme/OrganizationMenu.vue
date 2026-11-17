@@ -1,9 +1,15 @@
 <script setup>
 import { ref } from 'vue'
-import { withBase } from 'vitepress'
+import { useRoute, withBase } from 'vitepress'
 import organizations from './organizations.json'
 
 const panel = ref(null)
+const route = useRoute()
+
+function goBack() {
+  if (window.history.length > 1) window.history.back()
+  else window.location.assign(withBase('/'))
+}
 
 function closeFromBackdrop(event) {
   const { left, right, top, bottom } = panel.value.getBoundingClientRect()
@@ -18,6 +24,8 @@ function closeFromBackdrop(event) {
     aria-controls="organization-panel" @click="panel.showModal()">
     <span aria-hidden="true">☰</span> 导航
   </button>
+  <button v-if="route.path !== withBase('/') && route.path !== withBase('/index.html')"
+    class="history-back" type="button" aria-label="返回上一页" title="返回上一页" @click="goBack">←</button>
   <dialog id="organization-panel" ref="panel" class="organization-panel"
     aria-labelledby="organization-panel-title" @click.self="closeFromBackdrop">
     <header>
@@ -47,6 +55,19 @@ function closeFromBackdrop(event) {
 </template>
 
 <style scoped>
+.history-back {
+  position: fixed;
+  z-index: 45;
+  left: 88px;
+  top: 14px;
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 8px;
+  background: #f1f7ff;
+  font-size: 20px;
+}
+.history-back:hover { background: #d8eaff; }
 .organization-toggle {
   position: fixed;
   z-index: 45;

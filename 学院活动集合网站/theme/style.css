@@ -8,6 +8,7 @@
 }
 
 .VPNavBar .title { padding-left: 76px; }
+.Layout:has(.history-back) .VPNavBar .title { padding-left: 116px; }
 .vp-doc a { color: inherit; }
 .vp-doc .header-anchor { display: none; }
 
@@ -48,14 +49,17 @@ body {
 .glass-link:focus-visible { outline: 2px solid #486f9c; outline-offset: 3px; }
 .topic-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); gap: 14px; margin-top: 20px; }
 .vp-doc .topic-grid .glass-link { color: inherit; text-decoration: none; font-size: 18px; }
-.topic-grid span { float: right; }
+.topic-grid > a > span { float: right; }
+.topic-grid:has(.resource) { grid-template-columns: repeat(auto-fit, minmax(min(100%, 285px), 1fr)); }
+.topic-grid > .resource { margin-top: 0; }
 .vp-doc .activity-card { margin-top: 16px; max-width: 520px; }
 .vp-doc .activity-card a { text-decoration: none; }
 .activity-card strong { display: block; font-size: 18px; }
 .activity-card small { display: block; color: var(--vp-c-text-2); }
-.workshop-directory { display: grid; grid-template-columns: minmax(0, 1fr) minmax(155px, 30%); gap: 24px; align-items: start; }
-.workshop-directory nav { padding: 12px 16px; margin-top: 16px; border-left: 1px solid var(--vp-c-divider); }
-.workshop-directory nav a { display: block; padding: 6px 0; text-underline-offset: 4px; }
+.workshop-directory { display: grid; grid-template-columns: minmax(0, 1fr) minmax(155px, 30%); gap: clamp(28px, 5vw, 58px); align-items: start; margin-top: 24px; }
+.workshop-directory .activity-card + .activity-card { margin-top: 26px; }
+.workshop-directory nav { padding: 12px 18px; margin-top: 16px; border-left: 1px solid var(--vp-c-divider); }
+.workshop-directory nav a { display: block; padding: 9px 0; text-underline-offset: 4px; }
 @media (max-width: 600px) {
   .workshop-directory { grid-template-columns: 1fr; gap: 4px; }
 }
