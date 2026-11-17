@@ -94,7 +94,7 @@ header form { position: absolute; right: 0; }
 h2 { font-size: 25px; line-height: 1.2; font-weight: 700; }
 form button, nav a { padding: 8px 10px; border-radius: 8px; }
 form button { font-size: 26px; line-height: 1; }
-nav a { display: block; text-align: center; }
+nav a { display: block; text-align: center; font-size: 18px; line-height: 1.5; }
 nav a:hover, form button:hover { background: #d8eaff; }
 
 @media (prefers-reduced-motion: no-preference) {
