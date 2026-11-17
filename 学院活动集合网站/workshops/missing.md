@@ -4,7 +4,7 @@ import WorkshopResource from '../theme/WorkshopResource.vue'
 
 # Missing Workshop
 
-技术部 Workshop · 活动回放
+技术部 Workshop · 2026 年 9 月 12 日
 
 ## Workshop 介绍
 

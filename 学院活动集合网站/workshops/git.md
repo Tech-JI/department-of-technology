@@ -2,9 +2,9 @@
 import WorkshopResource from '../theme/WorkshopResource.vue'
 </script>
 
-# Git Wksp 26Fa
+# Git Workshop 入门
 
-技术部 Workshop
+技术部 Workshop · 2026 年秋季
 
 ## Workshop 介绍
 

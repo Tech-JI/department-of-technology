@@ -2,9 +2,9 @@
 import WorkshopResource from '../theme/WorkshopResource.vue'
 </script>
 
-# Bash Wksp 26Sp
+# Bash Workshop
 
-技术部 Workshop
+技术部 Workshop · 2026 年春季
 
 ## Workshop 介绍
 

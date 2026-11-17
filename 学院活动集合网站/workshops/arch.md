@@ -2,9 +2,9 @@
 import WorkshopResource from '../theme/WorkshopResource.vue'
 </script>
 
-# Archlinux Installation Wksp 26Su
+# Arch Linux 安装 Workshop
 
-技术部 Workshop
+技术部 Workshop · 2026 年夏季
 
 ## Workshop 介绍
 
