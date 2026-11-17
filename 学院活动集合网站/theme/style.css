@@ -7,12 +7,11 @@
   --vp-c-brand-soft: #edf0e9;
 }
 
-.VPNavBar .title { padding-left: 76px; }
-.Layout:has(.history-back) .VPNavBar .title {
+.VPNavBar .title {
   padding-left: max(76px, calc(136px - max(32px, (100vw - var(--vp-layout-max-width) + 64px) / 2)));
 }
 @media (max-width: 767px) {
-  .Layout:has(.history-back) .VPNavBar .title { padding-left: 112px; }
+  .VPNavBar .title { padding-left: 112px; }
 }
 .vp-doc a { color: inherit; }
 .vp-doc .header-anchor { display: none; }
@@ -83,9 +82,22 @@ body {
 }
 
 @media (prefers-reduced-motion: no-preference) {
+  .vp-doc > div > * {
+    animation: page-arrive 440ms cubic-bezier(.2, .7, .25, 1) backwards;
+    animation-delay: 125ms;
+  }
+  .vp-doc > div > :first-child { animation-delay: 0ms; }
+  .vp-doc > div > :nth-child(2) { animation-delay: 65ms; }
+  .vp-doc > div > :is(:focus, :focus-within) { animation: none; }
+
   a { transition: opacity 140ms ease; }
   a:active { opacity: .72; }
   .glass-link { transition: transform 150ms ease, border-color 150ms ease, opacity 140ms ease; }
   .glass-link:hover { transform: translateY(-2px); }
   .glass-link:active { transform: translateY(0) scale(.99); }
+}
+
+@keyframes page-arrive {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
 }

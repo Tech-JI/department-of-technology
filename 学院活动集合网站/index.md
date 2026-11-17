@@ -46,7 +46,7 @@ import organizations from './theme/organizations.json'
 
 @media (prefers-reduced-motion: no-preference) {
   .hero > *, .directory > h2, .group > h3, .org {
-    animation: arrive 440ms cubic-bezier(.2, .7, .25, 1) backwards;
+    animation: page-arrive 440ms cubic-bezier(.2, .7, .25, 1) backwards;
     animation-delay: var(--arrival-delay, 0ms);
   }
   .hero > :nth-child(2) { --arrival-delay: 65ms; }
@@ -58,10 +58,6 @@ import organizations from './theme/organizations.json'
   .org:nth-child(3n) { --arrival-delay: 330ms; }
   .group > h3:focus-within, .org:focus-within { animation: none; }
 
-  @keyframes arrive {
-    from { opacity: 0; translate: 0 12px; }
-    to { opacity: 1; translate: 0 0; }
-  }
 }
 </style>
 
