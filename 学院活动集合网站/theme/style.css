@@ -7,6 +7,10 @@
   --vp-c-brand-soft: #edf0e9;
 }
 
+:root, :root:lang(zh) {
+  --vp-font-family-base: system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+}
+
 .VPNavBar .title { padding-left: 76px; }
 .VPNavBar .VPNavBarHamburger { display: none; }
 @media (max-width: 959px) {
@@ -28,17 +32,6 @@ body {
     radial-gradient(ellipse at 3% 92%, #d0eee5, transparent 46%),
     linear-gradient(160deg, #eaf5ff, #e8f1fc 62%, #e8f6f2);
   background-repeat: no-repeat;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  @supports (animation-timeline: scroll()) {
-    body {
-      background-size: 120% 100%;
-      animation: background-drift 1ms linear both;
-      animation-timeline: scroll(root);
-    }
-    @keyframes background-drift { to { background-position: 100% 0; } }
-  }
 }
 
 .glass-link {
@@ -86,12 +79,12 @@ body {
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .vp-doc > div > * {
-    animation: page-arrive 440ms cubic-bezier(.2, .7, .25, 1) backwards;
-    animation-delay: 125ms;
+  .vp-doc > div > :nth-child(-n + 5) {
+    animation: page-arrive 280ms ease-out backwards;
+    animation-delay: 70ms;
   }
   .vp-doc > div > :first-child { animation-delay: 0ms; }
-  .vp-doc > div > :nth-child(2) { animation-delay: 65ms; }
+  .vp-doc > div > :nth-child(2) { animation-delay: 35ms; }
   .vp-doc > div > :is(:focus, :focus-within) { animation: none; }
 
   a { transition: opacity 140ms ease; }
@@ -102,6 +95,6 @@ body {
 }
 
 @keyframes page-arrive {
-  from { opacity: 0; transform: translateY(12px); }
+  from { opacity: 0; transform: translateY(8px); }
   to { opacity: 1; transform: translateY(0); }
 }

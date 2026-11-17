@@ -38,13 +38,13 @@ import { workshops } from './theme/workshops.js'
 
 @media (prefers-reduced-motion: no-preference) {
   .hero > *, .section h2, .grid > a, .workshop-row {
-    animation: page-arrive 440ms cubic-bezier(.2, .7, .25, 1) backwards;
+    animation: page-arrive 300ms ease-out backwards;
   }
-  .hero > :nth-child(2) { animation-delay: 65ms; }
-  .hero > :nth-child(3) { animation-delay: 125ms; }
-  .section h2 { animation-delay: 165ms; }
-  .grid > a, .workshop-row { animation-delay: 220ms; }
-  .grid > a:nth-child(even), .workshop-row:nth-child(even) { animation-delay: 280ms; }
+  .hero > :nth-child(2) { animation-delay: 40ms; }
+  .hero > :nth-child(3) { animation-delay: 75ms; }
+  .section h2 { animation-delay: 100ms; }
+  .grid > a, .workshop-row { animation-delay: 130ms; }
+  .grid > a:nth-child(even), .workshop-row:nth-child(even) { animation-delay: 165ms; }
   .grid > a:focus-visible, .workshop-row:focus-visible { animation: none; }
 }
 </style>
