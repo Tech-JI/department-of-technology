@@ -33,7 +33,7 @@
 }
 .vp-doc a { color: inherit; }
 .vp-doc .header-anchor { display: none; }
-.wechat-article { max-width: 677px; margin-top: 24px; background: #fff; }
+.wechat-article { max-width: 677px; margin: 24px auto 0; background: #fff; }
 .wechat-article img { display: block; width: 100%; height: auto; }
 .wechat-intro-space { height: 24px; }
 .vp-external-link-icon::after,

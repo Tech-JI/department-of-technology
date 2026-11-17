@@ -1,3 +1,7 @@
+---
+aside: false
+---
+
 # Tech GC | Git workshop
 
 2026 年 10 月 7 日 · GC蓝虎
