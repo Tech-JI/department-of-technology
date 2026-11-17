@@ -21,4 +21,14 @@
   </a>
 </div>
 
-教学文档下载待上传。
+<div class="activity-card">
+  <a class="glass-link" href="https://github.com/Tech-JI/missing-wksp-26fa">
+    <strong>查看 GitHub 仓库 ↗</strong>
+  </a>
+</div>
+
+<div class="topic-grid">
+  <a class="glass-link" href="/downloads/workshops/missing-slides.pdf" download>Workshop 讲义（PDF） <span aria-hidden="true">↓</span></a>
+  <a class="glass-link" href="/downloads/workshops/missing-wsl.pdf" download>WSL 教程（PDF） <span aria-hidden="true">↓</span></a>
+</div>
+
