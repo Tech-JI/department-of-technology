@@ -24,14 +24,14 @@ async function copyLink() {
 
 <template>
   <div class="resource glass-link">
-    <a class="resource-main" :href="withBase(href)" :download="download || undefined"
+    <a class="resource-main no-icon" :href="withBase(href)" :download="download || undefined"
       :target="download ? undefined : '_blank'" :rel="download ? undefined : 'noopener noreferrer'">
       <strong>{{ label }} <span aria-hidden="true">{{ download ? '↓' : '↗' }}</span></strong>
       <small v-if="note">{{ note }}</small>
     </a>
     <a v-if="preview" class="resource-action" :href="withBase(href)" target="_blank" rel="noopener noreferrer"
       :aria-label="'预览 PDF：' + label">PDF 预览</a>
-    <button class="resource-action" type="button" :aria-label="'复制链接：' + label" @click="copyLink">
+    <button v-if="!preview" class="resource-action" type="button" :aria-label="'复制链接：' + label" @click="copyLink">
       <span aria-live="polite">{{ feedback || '复制链接' }}</span>
     </button>
   </div>

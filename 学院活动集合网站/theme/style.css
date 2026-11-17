@@ -8,9 +8,16 @@
 }
 
 .VPNavBar .title { padding-left: 76px; }
-.Layout:has(.history-back) .VPNavBar .title { padding-left: 116px; }
+.Layout:has(.history-back) .VPNavBar .title {
+  padding-left: max(76px, calc(136px - max(32px, (100vw - var(--vp-layout-max-width) + 64px) / 2)));
+}
+@media (max-width: 767px) {
+  .Layout:has(.history-back) .VPNavBar .title { padding-left: 112px; }
+}
 .vp-doc a { color: inherit; }
 .vp-doc .header-anchor { display: none; }
+.vp-external-link-icon::after,
+.external-link-icon-enabled .vp-doc a:not(.no-icon)::after { content: none; }
 
 body {
   background:
@@ -57,9 +64,13 @@ body {
 .activity-card strong { display: block; font-size: 18px; }
 .activity-card small { display: block; color: var(--vp-c-text-2); }
 .workshop-directory { display: grid; grid-template-columns: minmax(0, 1fr) minmax(155px, 30%); gap: clamp(28px, 5vw, 58px); align-items: start; margin-top: 24px; }
-.workshop-directory .activity-card + .activity-card { margin-top: 26px; }
+.workshop-directory .activity-card + .activity-card { margin-top: 32px; }
 .workshop-directory nav { padding: 12px 18px; margin-top: 16px; border-left: 1px solid var(--vp-c-divider); }
 .workshop-directory nav a { display: block; padding: 9px 0; text-underline-offset: 4px; }
+@media (min-width: 960px) {
+  .vp-doc:has(.workshop-directory) h1,
+  .workshop-directory > div { translate: -48px 0; }
+}
 @media (max-width: 600px) {
   .workshop-directory { grid-template-columns: 1fr; gap: 4px; }
 }
