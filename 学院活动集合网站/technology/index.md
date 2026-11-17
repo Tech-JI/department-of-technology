@@ -1,5 +1,9 @@
 # 技术部
 
+## 部门简介
+
+<div class="intro-placeholder" aria-hidden="true"><!-- 待补充部门简介 --></div>
+
 ## 活动主题
 
 <div class="topic-grid">
