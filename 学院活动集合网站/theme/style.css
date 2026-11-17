@@ -13,7 +13,8 @@
 
 .VPNavBar .title { padding-left: 76px; }
 .VPNavBar .container { justify-content: flex-start; }
-.VPNavBar .container > .content { flex-grow: 0; margin-left: 12px; }
+.VPNavBar .container > .content { flex-grow: 0; margin-left: 6px; }
+.VPNavBar .VPNavBarSearch:empty { display: none; }
 .VPNavBar .VPNavBarMenuLink { padding: 0 10px; font-size: 16px; font-weight: 600; }
 .VPNavBar .VPNavBarHamburger { display: none; }
 @media (max-width: 959px) {

@@ -33,8 +33,10 @@ function closeFromBackdrop(event) {
       <form method="dialog"><button type="submit" aria-label="关闭导航" autofocus>×</button></form>
     </header>
     <nav aria-label="网站导航" @click="$event.target.closest('a') && panel.close()">
-      <a v-for="item in theme.nav" :key="item.link" :href="withBase(item.link)">{{ item.text }}</a>
-      <a :href="withBase('/technology/announcements')">技术部公告</a>
+      <template v-for="item in theme.nav" :key="item.link">
+        <a v-if="item.link === '/technology/workshops'" :href="withBase('/technology/announcements')">技术部公告</a>
+        <a :href="withBase(item.link)">{{ item.text }}</a>
+      </template>
     </nav>
   </dialog>
 </template>
