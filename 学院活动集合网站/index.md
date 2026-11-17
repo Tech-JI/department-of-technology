@@ -5,13 +5,20 @@ head:
   - - script
     - {}
     - |
-      if (!location.hash && 'scrollRestoration' in history) {
+      const isHomepage = () => location.pathname === '/' || location.pathname === '/index.html';
+      const navigation = performance.getEntriesByType('navigation')[0];
+      if (isHomepage() && location.hash && navigation?.type === 'reload') {
+        history.replaceState(history.state, '', location.pathname + location.search);
+      }
+      const shouldResetScroll = () => isHomepage() && !location.hash;
+      if (shouldResetScroll() && 'scrollRestoration' in history) {
         history.scrollRestoration = 'manual';
       }
       window.addEventListener('pageshow', () => {
-        if ((location.pathname === '/' || location.pathname === '/index.html') && !location.hash) {
-          window.scrollTo({ top: 0, behavior: 'instant' });
-        }
+        if (!shouldResetScroll()) return;
+        requestAnimationFrame(() => requestAnimationFrame(() => {
+          if (shouldResetScroll()) window.scrollTo({ top: 0, behavior: 'instant' });
+        }));
       });
 ---
 
