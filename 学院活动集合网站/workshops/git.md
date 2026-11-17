@@ -2,8 +2,6 @@
 title: Git 与 GitHub 入门
 ---
 
-[← 返回学院活动集合](../)
-
 # Git 与 GitHub 入门
 
 技术部 Workshop · 示例活动

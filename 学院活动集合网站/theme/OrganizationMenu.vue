@@ -32,8 +32,8 @@ function closeFromBackdrop(event) {
           <details open class="disclosure">
             <summary :aria-label="group.name + '部门列表'"></summary>
             <div v-for="department in group.departments" :key="department.href" class="department">
-              <a :class="department.topics ? 'row-label' : 'text-link'" :href="withBase(department.href)">{{ department.name }}</a>
-              <details v-if="department.topics" class="disclosure activity-disclosure">
+              <a :class="{ 'row-label': department.topics?.length }" :href="withBase(department.href)">{{ department.name }}</a>
+              <details v-if="department.topics?.length" class="disclosure activity-disclosure">
                 <summary :aria-label="department.name + '活动主题'"></summary>
                 <a v-for="topic in department.topics" :key="topic.href" :href="withBase(topic.href)">{{ topic.name }}</a>
               </details>
@@ -82,7 +82,6 @@ nav a:hover, form button:hover, summary:hover { background: #d8eaff; }
 .split-row, .department { position: relative; }
 .department { margin-left: 12px; }
 nav .row-label { position: absolute; z-index: 1; top: 8px; left: 10px; padding: 0; }
-nav .text-link { display: inline-block; padding: 0; margin: 8px 10px; }
 nav .group-name { font-weight: 650; }
 .disclosure > summary { display: flex; align-items: center; justify-content: flex-end; height: 40px; list-style: none; }
 .disclosure > summary::-webkit-details-marker { display: none; }

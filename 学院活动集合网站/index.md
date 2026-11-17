@@ -13,7 +13,8 @@ import organizations from './theme/organizations.json'
 .hero {
   border: 1px solid #c5daf2;
   border-radius: 20px;
-  background: linear-gradient(115deg, #e8f4ed, #e3edff 58%, #f5eef2);
+  background: radial-gradient(ellipse at 12% 0%, #fff6d8, transparent 52%),
+    linear-gradient(120deg, #c9eee4, #d8e6ff 58%, #f4dafa);
   color: #24384e;
   padding: clamp(24px, 4vw, 48px);
 }
@@ -31,6 +32,11 @@ import organizations from './theme/organizations.json'
 .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 235px), 1fr)); gap: 14px; }
 .org strong { font-size: 17px; font-weight: 650; }
 .org p { margin-top: 6px; font-size: 14px; color: var(--vp-c-text-2); }
+.org { position: relative; }
+.org-home::after { content: ''; position: absolute; inset: 0; border-radius: inherit; }
+.org:focus-within { outline: 2px solid #486f9c; outline-offset: 3px; }
+.activity-links { position: relative; display: flex; flex-wrap: wrap; gap: 4px 14px; width: fit-content; margin-top: 6px; font-size: 14px; }
+.activity-links a { padding: 4px 0; text-decoration: underline; text-underline-offset: 4px; }
 </style>
 
 <div class="portal">
@@ -48,11 +54,17 @@ import organizations from './theme/organizations.json'
           <span class="arrow" aria-hidden="true">→</span>
         </a>
       </h3>
+      <div v-if="group.topics?.length" class="activity-links">
+        <a v-for="topic in group.topics.slice(0, 2)" :key="topic.href" :href="withBase(topic.href)">{{ topic.name }}</a>
+      </div>
       <div v-if="group.departments" class="grid">
-        <a v-for="department in group.departments" :key="department.href" class="org glass-link" :href="withBase(department.href)">
-          <strong>{{ department.name }}</strong>
-          <p>{{ department.topics?.map(topic => topic.name).join(' · ') || '暂无活动记录' }}</p>
-        </a>
+        <div v-for="department in group.departments" :key="department.href" class="org glass-link">
+          <a class="org-home" :href="withBase(department.href)"><strong>{{ department.name }}</strong></a>
+          <div v-if="department.topics?.length" class="activity-links">
+            <a v-for="topic in department.topics.slice(0, 2)" :key="topic.href" :href="withBase(topic.href)">{{ topic.name }}</a>
+          </div>
+          <p v-else>暂无活动记录</p>
+        </div>
       </div>
     </section>
   </section>

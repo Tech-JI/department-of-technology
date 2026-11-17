@@ -1,7 +1,10 @@
 # 技术部 Workshop
 
-[← 返回技术部首页](./)
-
 ## 活动回放
 
-- [Missing Workshop](../workshops/missing.md) · 飞书妙记回放
+<div class="activity-card">
+  <a class="glass-link" href="../workshops/missing.html">
+    <strong>Missing Workshop →</strong>
+    <small>飞书妙记回放</small>
+  </a>
+</div>
