@@ -4,4 +4,4 @@
 
 ## 活动回放
 
-- [Missing Workshop](../workshops/missing.md) · 站内回放待上线
+- [Missing Workshop](../workshops/missing.md) · 飞书妙记回放
