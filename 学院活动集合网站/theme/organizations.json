@@ -1,0 +1,34 @@
+[
+  {
+    "name": "联络部",
+    "href": "/liaison/"
+  },
+  {
+    "name": "技术部",
+    "href": "/technology/"
+  },
+  {
+    "name": "社体部",
+    "href": "/sports/"
+  },
+  {
+    "name": "事业部",
+    "href": "/affairs/"
+  },
+  {
+    "name": "文艺部",
+    "href": "/arts/"
+  },
+  {
+    "name": "传媒部",
+    "href": "/media/"
+  },
+  {
+    "name": "学生科技创新协会",
+    "href": "/innovation/"
+  },
+  {
+    "name": "觅源青志队",
+    "href": "/volunteers/"
+  }
+]

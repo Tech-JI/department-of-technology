@@ -1,0 +1,10 @@
+:root {
+  --vp-c-brand-1: #444840;
+  --vp-c-brand-2: #565d50;
+  --vp-c-brand-3: #444840;
+  --vp-c-brand-soft: #edf0e9;
+}
+
+.VPNavBar .title { padding-left: 76px; }
+.vp-doc a { color: inherit; }
+.vp-doc .header-anchor { color: var(--vp-c-text-2); }
