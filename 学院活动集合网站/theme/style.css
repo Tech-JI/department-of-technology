@@ -11,6 +11,14 @@
 .vp-doc a { color: inherit; }
 .vp-doc .header-anchor { color: var(--vp-c-text-2); }
 
+body {
+  background:
+    radial-gradient(ellipse at 12% 4%, #e2f2ed, transparent 49%),
+    radial-gradient(ellipse at 96% 85%, #f7eee4, transparent 54%),
+    var(--vp-c-bg);
+  background-attachment: fixed;
+}
+
 .glass-link {
   display: block;
   padding: 20px 22px;
@@ -35,4 +43,12 @@
   border: 1px dashed #aec6e3;
   border-radius: 12px;
   background: #eaf3fe;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a { transition: opacity 140ms ease; }
+  a:active { opacity: .72; }
+  .glass-link { transition: transform 150ms ease, border-color 150ms ease, opacity 140ms ease; }
+  .glass-link:hover { transform: translateY(-2px); }
+  .glass-link:active { transform: translateY(0) scale(.99); }
 }

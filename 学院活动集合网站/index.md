@@ -13,7 +13,7 @@ import organizations from './theme/organizations.json'
 .hero {
   border: 1px solid #c5daf2;
   border-radius: 20px;
-  background: linear-gradient(115deg, #eaf7ff, #dce9ff);
+  background: linear-gradient(115deg, #e8f4ed, #e3edff 58%, #f5eef2);
   color: #24384e;
   padding: clamp(24px, 4vw, 48px);
 }
