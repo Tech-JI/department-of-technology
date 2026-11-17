@@ -14,7 +14,7 @@ import organizations from './theme/organizations.json'
   border: 1px solid #c5daf2;
   border-radius: 20px;
   background: radial-gradient(ellipse at 12% 0%, #fff6d8, transparent 52%),
-    linear-gradient(120deg, #c9eee4, #d8e6ff 58%, #f4dafa);
+    linear-gradient(120deg, #c9eee4, #d8e6ff 58%, #dbeef5);
   color: #24384e;
   padding: clamp(24px, 4vw, 48px);
 }
@@ -37,6 +37,12 @@ import organizations from './theme/organizations.json'
 .org:focus-within { outline: 2px solid #486f9c; outline-offset: 3px; }
 .activity-links { position: relative; display: flex; flex-wrap: wrap; gap: 4px 14px; width: fit-content; margin-top: 6px; font-size: 14px; }
 .activity-links a { padding: 4px 0; text-decoration: underline; text-underline-offset: 4px; }
+.activity-links a:hover, .activity-links a:focus-visible {
+  color: #234765;
+  background: #d0e5fa;
+  border-radius: 4px;
+  box-shadow: 0 0 0 4px #d0e5fa;
+}
 </style>
 
 <div class="portal">

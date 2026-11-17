@@ -9,14 +9,14 @@
 
 .VPNavBar .title { padding-left: 76px; }
 .vp-doc a { color: inherit; }
-.vp-doc .header-anchor { color: var(--vp-c-text-2); }
+.vp-doc .header-anchor { display: none; }
 
 body {
   background:
     radial-gradient(ellipse at 0% 12%, #bfe9e2, transparent 52%),
-    radial-gradient(ellipse at 100% 50%, #d8d6ff, transparent 53%),
-    radial-gradient(ellipse at 3% 92%, #ffe3ce, transparent 46%),
-    linear-gradient(160deg, #eaf5ff, #f6effd 62%, #e8f6f2);
+    radial-gradient(ellipse at 100% 50%, #cbdff7, transparent 53%),
+    radial-gradient(ellipse at 3% 92%, #d0eee5, transparent 46%),
+    linear-gradient(160deg, #eaf5ff, #e8f1fc 62%, #e8f6f2);
   background-repeat: no-repeat;
 }
 
@@ -53,6 +53,12 @@ body {
 .vp-doc .activity-card a { text-decoration: none; }
 .activity-card strong { display: block; font-size: 18px; }
 .activity-card small { display: block; color: var(--vp-c-text-2); }
+.workshop-directory { display: grid; grid-template-columns: minmax(0, 1fr) minmax(155px, 30%); gap: 24px; align-items: start; }
+.workshop-directory nav { padding: 12px 16px; margin-top: 16px; border-left: 1px solid var(--vp-c-divider); }
+.workshop-directory nav a { display: block; padding: 6px 0; text-underline-offset: 4px; }
+@media (max-width: 600px) {
+  .workshop-directory { grid-template-columns: 1fr; gap: 4px; }
+}
 .intro-placeholder {
   min-height: 64px;
   margin-top: 16px;

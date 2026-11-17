@@ -12,3 +12,13 @@
 </div>
 
 使用上海交通大学飞书账号登录后，打开链接即可观看，无需单独申请观看权限。
+
+## 教学资料
+
+<div class="activity-card">
+  <a class="glass-link" href="https://github.com/Tech-JI/missing-wksp-26fa/blob/26fa-update/wsl/wsl.md">
+    <strong>在 GitHub 查看 WSL 教程 ↗</strong>
+  </a>
+</div>
+
+教学文档下载待上传。
