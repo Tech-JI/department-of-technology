@@ -5,7 +5,7 @@ import { announcements } from '../theme/announcements.js'
 
 # 技术部公告
 
-<ul>
+<ul v-if="announcements.length">
   <li v-for="announcement in announcements" :key="announcement.title">
     <time :datetime="announcement.date">{{ announcement.date }}</time> ·
     <a :href="withBase(announcement.href)">{{ announcement.title }}</a>

@@ -60,7 +60,7 @@ import { announcements } from './theme/announcements.js'
 
   <section class="section" aria-labelledby="announcements">
     <h2 id="announcements">技术部公告</h2>
-    <ul class="announcements">
+    <ul v-if="announcements.length" class="announcements">
       <li v-for="announcement in announcements.slice(0, 5)" :key="announcement.title">
         <a :href="withBase(announcement.href)">{{ announcement.title }}</a>
       </li>
