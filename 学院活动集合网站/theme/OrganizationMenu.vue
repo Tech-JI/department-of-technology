@@ -28,7 +28,7 @@ function closeFromBackdrop(event) {
   <dialog id="organization-panel" ref="panel" class="organization-panel"
     aria-labelledby="organization-panel-title" @click.self="closeFromBackdrop">
     <header>
-      <h2 id="organization-panel-title">网站导航</h2>
+      <h2 id="organization-panel-title">技术部</h2>
       <form method="dialog"><button type="submit" aria-label="关闭导航" autofocus>×</button></form>
     </header>
     <nav aria-label="网站导航" @click="$event.target.closest('a') && panel.close()">
