@@ -14,9 +14,10 @@ import WorkshopResource from '../theme/WorkshopResource.vue'
 
 ## 回放
 
-<WorkshopResource href="https://sjtu.feishu.cn/minutes/obcny55a3v6t1p7424u64qx8" label="在飞书妙记观看" note="约 2 小时 9 分钟" />
+<WorkshopResource href="https://sjtu.feishu.cn/minutes/obcny55a3v6t1p7424u64qx8" label="Windows 专场回放" note="约 2 小时 9 分钟" />
+<WorkshopResource href="https://sjtu.feishu.cn/minutes/obcny55ww9e688da96j219q3" label="macOS 专场回放" />
 
-使用上海交通大学飞书账号登录后，打开链接即可观看，无需单独申请观看权限。
+请使用上海交通大学飞书账号登录。Windows 场无需单独申请观看权限；macOS 场以该妙记的分享设置为准。
 
 ## 教学资料
 

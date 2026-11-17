@@ -16,6 +16,10 @@
 .VPNavBar .container > .content { flex-grow: 0; margin-left: 190px; }
 .VPNavBar .VPNavBarSearch:empty { display: none; }
 .VPNavBar .VPNavBarMenuLink { padding: 0 10px; font-size: 16px; font-weight: 600; }
+.VPNavBar .search-toggle { margin-left: 12px; }
+@media (max-width: 767px) {
+  .VPNavBar .container > .content { margin-left: auto; }
+}
 .VPNavBar .VPNavBarHamburger { display: none; }
 @media (max-width: 959px) {
   .Layout > .VPNav {

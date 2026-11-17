@@ -5,9 +5,12 @@ aside: false
 <script setup>
 import { withBase } from 'vitepress'
 import { workshops } from '../theme/workshops.js'
+import WorkshopSearch from '../theme/WorkshopSearch.vue'
 </script>
 
 # 技术部 Workshop
+
+<WorkshopSearch />
 
 <div class="workshop-directory">
   <div>
