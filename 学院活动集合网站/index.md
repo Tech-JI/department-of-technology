@@ -4,35 +4,59 @@ title: 学院活动集合
 ---
 
 <style scoped>
-.archive{max-width:1080px;margin:auto;padding:0 24px 72px}
-.hero{margin:24px 0 48px;padding:clamp(32px,7vw,84px);border-radius:24px;background:#102a43;color:#f0f6fc}
-.hero p{margin:0 0 14px}
-.hero h1{margin:0 0 18px;font-size:clamp(36px,7vw,72px);line-height:1.1;letter-spacing:-.04em}
-.hero a{display:inline-block;margin-top:14px;padding:10px 18px;border-radius:8px;background:#baf4dd;color:#102a43;font-weight:650}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,290px),1fr));gap:18px}
-.cards article{padding:24px;border:1px solid var(--vp-c-divider);border-radius:16px;background:var(--vp-c-bg-soft)}
-.cards h3{margin:10px 0;font-size:22px;line-height:1.35}
-.cards p{margin:8px 0}
-.cards a{color:var(--vp-c-brand-1);text-decoration:underline}
+.portal {color:var(--vp-c-text-1)}
+.hero {background:radial-gradient(ellipse at 90% 110%,#384d6a,transparent 58%),#101c2e;color:#fff}
+.inner {width:min(1120px,calc(100% - 48px));margin:auto}
+.hero .inner {padding:clamp(60px,10vw,136px) 0}
+.school {color:#e1cfa4;font-size:14px;letter-spacing:.12em}
+.hero h1 {font-size:clamp(44px,8vw,96px);line-height:1.1;letter-spacing:-.055em;margin:18px 0}
+.hero p:last-child {color:#d5deeb;font-size:17px}
+nav {border-bottom:1px solid var(--vp-c-divider)}
+.menu {display:flex;flex-wrap:wrap;gap:4px 24px;padding:12px 0}
+.menu a {display:block;padding:8px 0;font-size:14px;font-weight:600}
+a:hover {text-decoration:underline}
+a:focus-visible {outline:2px solid var(--vp-c-brand-1);outline-offset:4px}
+.directory {padding:48px 0 80px}
+.directory h2 {font-size:30px;margin-bottom:24px}
+.grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:14px}
+.org {padding:22px;min-height:112px;border:1px solid var(--vp-c-divider);border-radius:12px;background:var(--vp-c-bg-soft);scroll-margin-top:86px}
+.org:target {border-color:var(--vp-c-brand-1)}
+.org h3 {font-size:18px;margin-bottom:8px}
+.org p {font-size:14px;color:var(--vp-c-text-2)}
+.links {display:flex;flex-wrap:wrap;gap:12px;font-weight:600;color:var(--vp-c-brand-1)}
 </style>
 
-<main class="archive">
+<div class="portal">
   <header class="hero">
-    <p>上海交通大学 · 张江理工国际学院</p>
-    <h1>学院活动集合</h1>
-    <p>浏览学生组织的活动记录，找到你错过的 Workshop 回放。</p>
-    <a href="#workshops">浏览 Workshop ↓</a>
+    <div class="inner">
+      <p class="school">上海交通大学 · 张江理工国际学院</p>
+      <h1>学院活动集合</h1>
+      <p>学生组织活动、Workshop 回放与比赛记录</p>
+    </div>
   </header>
-  <section aria-labelledby="workshops">
-    <h2 id="workshops">技术部 Workshop</h2>
-    <p>面向同学们的技术科普讲座。以下条目为网站演示。</p>
-    <div class="cards">
-      <article>
-        <p>技术部 · 示例活动</p>
-        <h3>Git 与 GitHub 入门</h3>
-        <p>理解版本控制，用提交和分支记录项目的变化。</p>
-        <a href="./workshops/git.html">查看活动与回放状态</a>
-      </article>
+  <nav aria-label="学生组织导航">
+    <div class="inner menu">
+      <a href="#org-0">联络部</a>
+    <a href="#org-1">技术部</a>
+    <a href="#org-2">社体部</a>
+    <a href="#org-3">事业部</a>
+    <a href="#org-4">文艺部</a>
+    <a href="#org-5">传媒部</a>
+    <a href="#org-6">学生科技创新协会</a>
+    <a href="#org-7">觅源青志队</a>
+    </div>
+  </nav>
+  <section class="inner directory" aria-labelledby="organizations">
+    <h2 id="organizations">学生组织</h2>
+    <div class="grid">
+    <section class="org" id="org-0"><h3>联络部</h3><p>暂无活动记录</p></section>
+    <section class="org" id="org-1"><h3>技术部</h3><div class="links"><a href="./technology/workshops.html">Workshop ↗</a><a href="./technology/competitions.html">比赛 ↗</a></div></section>
+    <section class="org" id="org-2"><h3>社体部</h3><p>暂无活动记录</p></section>
+    <section class="org" id="org-3"><h3>事业部</h3><p>暂无活动记录</p></section>
+    <section class="org" id="org-4"><h3>文艺部</h3><p>暂无活动记录</p></section>
+    <section class="org" id="org-5"><h3>传媒部</h3><p>暂无活动记录</p></section>
+    <section class="org" id="org-6"><h3>学生科技创新协会</h3><p>暂无活动记录</p></section>
+    <section class="org" id="org-7"><h3>觅源青志队</h3><p>暂无活动记录</p></section>
     </div>
   </section>
-</main>
+</div>
