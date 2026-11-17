@@ -12,7 +12,8 @@
 }
 
 .VPNavBar .title { padding-left: 76px; }
-.VPNavBar .content-body { justify-content: flex-start; padding-left: 12px; }
+.VPNavBar .container { justify-content: flex-start; }
+.VPNavBar .container > .content { flex-grow: 0; margin-left: 12px; }
 .VPNavBar .VPNavBarMenuLink { padding: 0 10px; font-size: 16px; font-weight: 600; }
 .VPNavBar .VPNavBarHamburger { display: none; }
 @media (max-width: 959px) {
