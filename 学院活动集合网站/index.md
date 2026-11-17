@@ -43,6 +43,26 @@ import organizations from './theme/organizations.json'
   border-radius: 4px;
   box-shadow: 0 0 0 4px #d0e5fa;
 }
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero > *, .directory > h2, .group > h3, .org {
+    animation: arrive 440ms cubic-bezier(.2, .7, .25, 1) backwards;
+    animation-delay: var(--arrival-delay, 0ms);
+  }
+  .hero > :nth-child(2) { --arrival-delay: 65ms; }
+  .hero > :nth-child(3) { --arrival-delay: 125ms; }
+  .directory > h2 { --arrival-delay: 165ms; }
+  .group > h3 { --arrival-delay: 210ms; }
+  .org { --arrival-delay: 250ms; }
+  .org:nth-child(3n + 2) { --arrival-delay: 290ms; }
+  .org:nth-child(3n) { --arrival-delay: 330ms; }
+  .group > h3:focus-within, .org:focus-within { animation: none; }
+
+  @keyframes arrive {
+    from { opacity: 0; translate: 0 12px; }
+    to { opacity: 1; translate: 0 0; }
+  }
+}
 </style>
 
 <div class="portal">
