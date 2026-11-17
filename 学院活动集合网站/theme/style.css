@@ -8,6 +8,14 @@
 }
 
 .VPNavBar .title { padding-left: 76px; }
+.VPNavBar .VPNavBarHamburger { display: none; }
+@media (max-width: 959px) {
+  .Layout > .VPNav {
+    position: sticky;
+    top: 0;
+    background: var(--vp-c-bg);
+  }
+}
 .vp-doc a { color: inherit; }
 .vp-doc .header-anchor { display: none; }
 .vp-external-link-icon::after,
@@ -65,8 +73,9 @@ body {
   .vp-doc:has(.workshop-directory) h1,
   .workshop-directory > div { translate: -48px 0; }
 }
-@media (max-width: 600px) {
-  .workshop-directory { grid-template-columns: 1fr; gap: 4px; }
+@media (max-width: 767px) {
+  .workshop-directory { grid-template-columns: 1fr; }
+  .workshop-directory nav { display: none; }
 }
 .intro-placeholder {
   min-height: 64px;
