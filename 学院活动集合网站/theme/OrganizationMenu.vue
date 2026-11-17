@@ -33,6 +33,7 @@ function closeFromBackdrop(event) {
     </header>
     <nav aria-label="网站导航" @click="$event.target.closest('a') && panel.close()">
       <a :href="withBase('/')">技术部首页</a>
+      <a :href="withBase('/technology/')">关于技术部</a>
       <a :href="withBase('/technology/workshops.html')">Workshop</a>
       <a :href="withBase('/technology/competitions.html')">比赛</a>
     </nav>

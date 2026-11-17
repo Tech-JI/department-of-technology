@@ -27,6 +27,7 @@ import { workshops } from './theme/workshops.js'
 .grid p { margin-top: 6px; font-size: 14px; color: var(--vp-c-text-2); }
 .entry { display: flex; justify-content: space-between; gap: 12px; align-items: center; }
 .entry .arrow { flex: none; display: grid; place-items: center; width: 36px; height: 36px; border-radius: 50%; background: #dcecff; }
+.intro p { margin: 6px 0 0; max-width: 65ch; color: var(--vp-c-text-2); line-height: 1.65; }
 .workshop-list { display: grid; gap: 14px; }
 .workshop-row { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr) auto; align-items: center; gap: 20px; }
 .workshop-row strong { font-size: 17px; }
@@ -37,15 +38,15 @@ import { workshops } from './theme/workshops.js'
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .hero > *, .section h2, .grid > a, .workshop-row {
+  .hero > *, .section h2, .grid > a, .workshop-row, .intro {
     animation: page-arrive 300ms ease-out backwards;
   }
   .hero > :nth-child(2) { animation-delay: 40ms; }
   .hero > :nth-child(3) { animation-delay: 75ms; }
   .section h2 { animation-delay: 100ms; }
-  .grid > a, .workshop-row { animation-delay: 130ms; }
+  .grid > a, .workshop-row, .intro { animation-delay: 130ms; }
   .grid > a:nth-child(even), .workshop-row:nth-child(even) { animation-delay: 165ms; }
-  .grid > a:focus-visible, .workshop-row:focus-visible { animation: none; }
+  .grid > a:focus-visible, .workshop-row:focus-visible, .intro:focus-visible { animation: none; }
 }
 </style>
 
@@ -55,6 +56,17 @@ import { workshops } from './theme/workshops.js'
     <h1>技术部</h1>
     <p>技术科普 Workshop、回放、教学资料与比赛记录</p>
   </header>
+
+  <section class="section" aria-labelledby="about">
+    <h2 id="about">关于技术部</h2>
+    <a class="intro entry glass-link" :href="withBase('/technology/')">
+      <div>
+        <strong>了解技术部</strong>
+        <p>技术部是面向同学们的技术实践平台。零基础也欢迎，你可以从 Workshop 入门，再按兴趣参与技术维护、项目开发或宣传，用实际项目练习工科与信息技术技能。</p>
+      </div>
+      <span class="arrow" aria-hidden="true">→</span>
+    </a>
+  </section>
 
   <section class="section" aria-labelledby="activities">
     <h2 id="activities">活动</h2>
