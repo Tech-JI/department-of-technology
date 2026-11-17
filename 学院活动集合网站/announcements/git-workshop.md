@@ -1,15 +1,11 @@
-# Git Workshop 入门活动公告
+# Tech GC | Git workshop
 
-2026 年 10 月 7 日 · 技术部
+2026 年 10 月 7 日 · GC蓝虎
 
-## 用赛车小游戏练习 Git
-
-这场 Workshop 用一个小型赛车游戏帮助同学们认识版本控制。练习从 Git 安装和终端操作开始，在项目中实际记录修改、查看提交历史，并通过分支与其他同学同步工作。
-
-## 课前与课后资料
-
-初次使用 Git 的同学可以先阅读安装指南，再跟着讲义练习。详情页收录了回放、练习题、命令参考表和 SSH 配置说明。
-
-[查看 Git Workshop 入门](/workshops/git)
-
-*根据 GC 蓝虎的活动推文与课程讲义整理。*
+<div class="wechat-article">
+  <img src="/announcements/git-workshop/01.gif" width="640" height="166" alt="Tech GC | Git workshop 原文第 1 张图" loading="eager" />
+  <img src="/announcements/git-workshop/02.png" width="1080" height="1920" alt="Tech GC | Git workshop 原文第 2 张图" loading="lazy" />
+  <img src="/announcements/git-workshop/03.png" width="1080" height="1920" alt="Tech GC | Git workshop 原文第 3 张图" loading="lazy" />
+  <img src="/announcements/git-workshop/04.jpg" width="1080" height="480" alt="Tech GC | Git workshop 原文第 4 张图" loading="lazy" />
+  <img src="/announcements/git-workshop/05.gif" width="640" height="119" alt="Tech GC | Git workshop 原文第 5 张图" loading="lazy" />
+</div>

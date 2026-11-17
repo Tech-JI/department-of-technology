@@ -13,12 +13,15 @@
 
 .VPNavBar .container > .title { display: none; }
 .VPNavBar .container { justify-content: flex-start; }
-.VPNavBar .container > .content { flex-grow: 0; margin-left: 190px; }
+.VPNavBar .container > .content { flex-grow: 1; min-width: 0; margin-left: 190px; }
 .VPNavBar .VPNavBarSearch:empty { display: none; }
 .VPNavBar .VPNavBarMenuLink { padding: 0 10px; font-size: 16px; font-weight: 600; }
-.VPNavBar .search-toggle { margin-left: 12px; }
-@media (max-width: 767px) {
-  .VPNavBar .container > .content { margin-left: auto; }
+.VPNavBar .wrapper .content-body { justify-content: space-between; gap: 16px; }
+@media (min-width: 1100px) {
+  .VPNavBar .header-search { margin-right: 12%; }
+}
+@media (max-width: 959px) {
+  .VPNavBar .container > .content { margin-left: 82px; }
 }
 .VPNavBar .VPNavBarHamburger { display: none; }
 @media (max-width: 959px) {
@@ -30,6 +33,9 @@
 }
 .vp-doc a { color: inherit; }
 .vp-doc .header-anchor { display: none; }
+.wechat-article { max-width: 677px; margin-top: 24px; background: #fff; }
+.wechat-article img { display: block; width: 100%; height: auto; }
+.wechat-intro-space { height: 24px; }
 .vp-external-link-icon::after,
 .external-link-icon-enabled .vp-doc a:not(.no-icon)::after { content: none; }
 
@@ -72,6 +78,7 @@ body {
 .workshop-directory nav a { display: block; padding: 9px 0; text-underline-offset: 4px; }
 @media (min-width: 960px) {
   .vp-doc:has(.workshop-directory) h1,
+  .vp-doc:has(.workshop-directory) .workshop-search,
   .workshop-directory > div { translate: -48px 0; }
 }
 @media (max-width: 767px) {
