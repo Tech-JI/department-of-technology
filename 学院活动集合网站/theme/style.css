@@ -12,6 +12,7 @@
 }
 
 .VPNavBar .title { padding-left: 76px; }
+.VPNavBar .content-body { justify-content: flex-start; padding-left: 24px; }
 .VPNavBar .VPNavBarHamburger { display: none; }
 @media (max-width: 959px) {
   .Layout > .VPNav {

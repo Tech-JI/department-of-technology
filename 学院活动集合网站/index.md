@@ -5,7 +5,8 @@ title: 技术部
 
 <script setup>
 import { withBase } from 'vitepress'
-import { workshops } from './theme/workshops.js'
+import { recentWorkshops } from './theme/workshops.js'
+import { announcements } from './theme/announcements.js'
 </script>
 
 <style scoped>
@@ -18,16 +19,16 @@ import { workshops } from './theme/workshops.js'
   color: #24384e;
   padding: clamp(24px, 4vw, 48px);
 }
+.hero h1 + p { max-width: 55em; line-height: 1.7; }
+.announcements { padding: 8px 20px 12px; border: 1px solid #c5daf2; border-radius: 16px; background: #ffffffa8; }
+.announcements li + li { border-top: 1px solid #d5e1ed; }
+.announcements li a { display: block; padding: 10px 0; }
+.section-link { display: inline-block; margin-top: 14px; text-decoration: underline; text-underline-offset: 4px; }
+.announcements a:hover, .section-link:hover { text-decoration: underline; }
 .school { color: #4a627c; font-size: 14px; }
 .hero h1 { font-size: clamp(36px, 6vw, 58px); line-height: 1.15; font-weight: 700; margin: 10px 0; }
 .section { margin-top: 32px; }
 .section h2 { font-size: 24px; font-weight: 650; margin-bottom: 14px; }
-.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr)); gap: 14px; }
-.grid strong { display: block; font-size: 17px; font-weight: 650; }
-.grid p { margin-top: 6px; font-size: 14px; color: var(--vp-c-text-2); }
-.entry { display: flex; justify-content: space-between; gap: 12px; align-items: center; }
-.entry .arrow { flex: none; display: grid; place-items: center; width: 36px; height: 36px; border-radius: 50%; background: #dcecff; }
-.intro p { margin: 6px 0 0; max-width: 65ch; color: var(--vp-c-text-2); line-height: 1.65; }
 .workshop-list { display: grid; gap: 14px; }
 .workshop-row { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr) auto; align-items: center; gap: 20px; }
 .workshop-row strong { font-size: 17px; }
@@ -38,15 +39,15 @@ import { workshops } from './theme/workshops.js'
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .hero > *, .section h2, .grid > a, .workshop-row, .intro {
+  .hero > *, .section h2, .workshop-row {
     animation: page-arrive 300ms ease-out backwards;
   }
   .hero > :nth-child(2) { animation-delay: 40ms; }
   .hero > :nth-child(3) { animation-delay: 75ms; }
   .section h2 { animation-delay: 100ms; }
-  .grid > a, .workshop-row, .intro { animation-delay: 130ms; }
-  .grid > a:nth-child(even), .workshop-row:nth-child(even) { animation-delay: 165ms; }
-  .grid > a:focus-visible, .workshop-row:focus-visible, .intro:focus-visible { animation: none; }
+  .workshop-row { animation-delay: 130ms; }
+  .workshop-row:nth-child(even) { animation-delay: 165ms; }
+  .workshop-row:focus-visible { animation: none; }
 }
 </style>
 
@@ -54,42 +55,28 @@ import { workshops } from './theme/workshops.js'
   <header class="hero">
     <p class="school">上海交通大学 · 张江理工国际学院学生会</p>
     <h1>技术部</h1>
-    <p>技术科普 Workshop、回放、教学资料与比赛记录</p>
+    <p>技术部是面向同学们的技术实践平台。零基础也欢迎，你可以从 Workshop 入门，再按兴趣参与技术维护、项目开发或宣传，在实际项目中提升工科和信息技术技能。</p>
   </header>
 
-  <section class="section" aria-labelledby="about">
-    <h2 id="about">关于技术部</h2>
-    <a class="intro entry glass-link" :href="withBase('/technology/')">
-      <div>
-        <strong>了解技术部</strong>
-        <p>技术部是面向同学们的技术实践平台。零基础也欢迎，你可以从 Workshop 入门，再按兴趣参与技术维护、项目开发或宣传，用实际项目练习工科与信息技术技能。</p>
-      </div>
-      <span class="arrow" aria-hidden="true">→</span>
-    </a>
-  </section>
-
-  <section class="section" aria-labelledby="activities">
-    <h2 id="activities">活动</h2>
-    <div class="grid">
-      <a class="entry glass-link" :href="withBase('/technology/workshops.html')">
-        <div><strong>Workshop</strong><p>浏览讲座、回放和讲义</p></div>
-        <span class="arrow" aria-hidden="true">→</span>
-      </a>
-      <a class="entry glass-link" :href="withBase('/technology/competitions.html')">
-        <div><strong>比赛</strong><p>查看技术部比赛记录</p></div>
-        <span class="arrow" aria-hidden="true">→</span>
-      </a>
-    </div>
+  <section class="section" aria-labelledby="announcements">
+    <h2 id="announcements">技术部公告</h2>
+    <ul class="announcements">
+      <li v-for="announcement in announcements.slice(0, 5)" :key="announcement.title">
+        <a :href="withBase(announcement.href)">{{ announcement.title }}</a>
+      </li>
+    </ul>
+    <a class="section-link" :href="withBase('/technology/announcements')">更多公告 →</a>
   </section>
 
   <section class="section" aria-labelledby="workshops">
     <h2 id="workshops">Workshop 与教学资料</h2>
     <div class="workshop-list">
-      <a v-for="workshop in workshops" :key="workshop.href" class="workshop-row glass-link" :href="withBase(workshop.href)">
+      <a v-for="workshop in recentWorkshops" :key="workshop.href" class="workshop-row glass-link" :href="withBase(workshop.href)">
         <strong>{{ workshop.name }}</strong>
         <p>{{ workshop.description }}</p>
         <span aria-hidden="true">→</span>
       </a>
     </div>
+    <a class="section-link" :href="withBase('/technology/workshops')">全部 Workshop →</a>
   </section>
 </div>

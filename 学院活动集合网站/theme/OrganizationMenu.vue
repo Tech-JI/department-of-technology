@@ -1,9 +1,10 @@
 <script setup>
 import { ref } from 'vue'
-import { useRoute, withBase } from 'vitepress'
+import { useData, useRoute, withBase } from 'vitepress'
 
 const panel = ref(null)
 const route = useRoute()
+const { theme } = useData()
 
 function goBack() {
   if (window.history.length > 1) window.history.back()
@@ -33,9 +34,8 @@ function closeFromBackdrop(event) {
     </header>
     <nav aria-label="网站导航" @click="$event.target.closest('a') && panel.close()">
       <a :href="withBase('/')">技术部首页</a>
-      <a :href="withBase('/technology/')">关于技术部</a>
-      <a :href="withBase('/technology/workshops.html')">Workshop</a>
-      <a :href="withBase('/technology/competitions.html')">比赛</a>
+      <a v-for="item in theme.nav" :key="item.link" :href="withBase(item.link)">{{ item.text }}</a>
+      <a :href="withBase('/technology/announcements')">技术部公告</a>
     </nav>
   </dialog>
 </template>
