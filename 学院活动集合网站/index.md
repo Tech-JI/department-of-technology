@@ -21,8 +21,6 @@ import organizations from './theme/organizations.json'
 .hero h1 { font-size: clamp(32px, 5vw, 54px); line-height: 1.15; font-weight: 700; margin: 10px 0; }
 .directory { margin-top: 32px; }
 .directory h2 { font-size: 24px; font-weight: 650; margin-bottom: 12px; }
-.group { margin-top: 24px; }
-.group h3 { font-size: 19px; font-weight: 650; margin-bottom: 12px; }
 .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 235px), 1fr)); gap: 14px; }
 .org strong { font-size: 17px; font-weight: 650; }
 .org p { margin-top: 6px; font-size: 14px; color: var(--vp-c-text-2); }
@@ -36,20 +34,11 @@ import organizations from './theme/organizations.json'
   </header>
   <section class="directory" aria-labelledby="organizations">
     <h2 id="organizations">学生组织</h2>
-    <section class="group" v-for="group in organizations" :key="group.name">
-      <template v-if="group.departments">
-        <h3>{{ group.name }}</h3>
-        <div class="grid">
-          <a v-for="department in group.departments" :key="department.href" class="org glass-link" :href="withBase(department.href)">
-            <strong>{{ department.name }}</strong>
-            <p>{{ department.topics?.map(topic => topic.name).join(' · ') || '暂无活动记录' }}</p>
-          </a>
-        </div>
-      </template>
-      <a v-else class="org glass-link" :href="withBase(group.href)">
+    <div class="grid">
+      <a v-for="group in organizations" :key="group.href" class="org glass-link" :href="withBase(group.href)">
         <strong>{{ group.name }}</strong>
         <p>{{ group.label }}</p>
       </a>
-    </section>
+    </div>
   </section>
 </div>

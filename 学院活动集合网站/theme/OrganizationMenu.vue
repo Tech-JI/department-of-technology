@@ -29,6 +29,7 @@ function closeFromBackdrop(event) {
       <template v-for="group in organizations" :key="group.name">
         <details v-if="group.departments">
           <summary>{{ group.name }}</summary>
+          <a class="department" :href="withBase(group.href)">学生会主页</a>
           <div v-for="department in group.departments" :key="department.href" class="department">
             <a :href="withBase(department.href)">{{ department.name }}</a>
             <details v-if="department.topics" class="activity-disclosure">

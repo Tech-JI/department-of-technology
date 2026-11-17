@@ -1,6 +1,8 @@
 [
   {
     "name": "学生会",
+    "href": "/student-union/",
+    "label": "六个部门的活动与回放",
     "departments": [
       {
         "name": "联络部",
