@@ -89,11 +89,12 @@ function closeFromBackdrop(event) {
   overflow-y: auto;
 }
 .organization-panel::backdrop { background: rgb(24 45 73 / 32%); }
-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
-h2 { font-weight: 700; }
+header { position: relative; display: grid; place-items: center; min-height: 44px; margin-bottom: 16px; }
+header form { position: absolute; right: 0; }
+h2 { font-size: 25px; line-height: 1.2; font-weight: 700; }
 form button, nav a { padding: 8px 10px; border-radius: 8px; }
 form button { font-size: 26px; line-height: 1; }
-nav a { display: block; }
+nav a { display: block; text-align: center; }
 nav a:hover, form button:hover { background: #d8eaff; }
 
 @media (prefers-reduced-motion: no-preference) {
