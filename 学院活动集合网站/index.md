@@ -27,17 +27,25 @@ import { workshops } from './theme/workshops.js'
 .grid p { margin-top: 6px; font-size: 14px; color: var(--vp-c-text-2); }
 .entry { display: flex; justify-content: space-between; gap: 12px; align-items: center; }
 .entry .arrow { flex: none; display: grid; place-items: center; width: 36px; height: 36px; border-radius: 50%; background: #dcecff; }
+.workshop-list { display: grid; gap: 14px; }
+.workshop-row { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr) auto; align-items: center; gap: 20px; }
+.workshop-row strong { font-size: 17px; }
+.workshop-row p { color: var(--vp-c-text-2); line-height: 1.65; }
+@media (max-width: 600px) {
+  .workshop-row { grid-template-columns: minmax(0, 1fr) auto; gap: 6px 12px; }
+  .workshop-row p { grid-row: 2; grid-column: 1 / -1; }
+}
 
 @media (prefers-reduced-motion: no-preference) {
-  .hero > *, .section h2, .grid > a {
+  .hero > *, .section h2, .grid > a, .workshop-row {
     animation: page-arrive 440ms cubic-bezier(.2, .7, .25, 1) backwards;
   }
   .hero > :nth-child(2) { animation-delay: 65ms; }
   .hero > :nth-child(3) { animation-delay: 125ms; }
   .section h2 { animation-delay: 165ms; }
-  .grid > a { animation-delay: 220ms; }
-  .grid > a:nth-child(even) { animation-delay: 280ms; }
-  .grid > a:focus-visible { animation: none; }
+  .grid > a, .workshop-row { animation-delay: 220ms; }
+  .grid > a:nth-child(even), .workshop-row:nth-child(even) { animation-delay: 280ms; }
+  .grid > a:focus-visible, .workshop-row:focus-visible { animation: none; }
 }
 </style>
 
@@ -64,10 +72,11 @@ import { workshops } from './theme/workshops.js'
 
   <section class="section" aria-labelledby="workshops">
     <h2 id="workshops">Workshop 与教学资料</h2>
-    <div class="grid">
-      <a v-for="workshop in workshops" :key="workshop.href" class="glass-link" :href="withBase(workshop.href)">
+    <div class="workshop-list">
+      <a v-for="workshop in workshops" :key="workshop.href" class="workshop-row glass-link" :href="withBase(workshop.href)">
         <strong>{{ workshop.name }}</strong>
         <p>{{ workshop.description }}</p>
+        <span aria-hidden="true">→</span>
       </a>
     </div>
   </section>
